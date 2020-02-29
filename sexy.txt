@@ -1,0 +1,60 @@
+> look self
+you have incredible HAIR. it has XLPTD you into a LGDRY 
+FGURE. your STATS are MAXED. your PSYCH is PLAC'D.
+  strng 10  int   10
+  hair  10  high  0
+
+> inv
+  00003  FOODS  00001  ROPES
+  GRASS  DHKEY  SWORD  ARROW
+
+> look grass
+the GRASS seems WRONG. you shouldn't have this.
+
+> drop grass
+you drop the GRASS. it scatters in the BREEZ. it doesn't 
+HELP.
+
+> help
+there is no one here you can HELP.
+
+> look dhkey
+it looks like a KEY. the initials DH are NXRBD on it.
+
+> look sword
+it is a ROBOT SWORD. where did you get this?
+
+> look arrow
+not yet...
+
+> inv
+  00003  FOODS  00001  ROPES
+  DHKEY  SWORD 
+
+> eat food
+you're not THAT HNGRY.
+
+> eat foods
+you eat a FOODS.
+
+you feel it SLIDE down your THROAT and FILL your BELLY.
+but you're still HNGRY.
+
+> look
+
+> look
+
+> go right
+you can't GO there.
+
+> go left
+you have incredible HAIR. it has XLPTD you into a LGDRY 
+FGURE. your STATS are MAXED. your PSYCH is PLAC'D.
+  strng 10  int   10
+  hair  10  high  0
+
+> wait
+you have incredible HAIR. it has XLPTD you into a LGDRY 
+FGURE. your STATS are MAXED. your PSYCH is PLAC'D.
+  strng 10  int   10
+  hair  10  high  0

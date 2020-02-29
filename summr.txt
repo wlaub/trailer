@@ -1,0 +1,98 @@
+> look
+you STAND at the base of a CLIFF. there are VINES on the
+CLIFF. your PERSP is SIDE. EXITS are LEFT and RIGHT.
+
+> climb vines
+you CLIMB the VINES. it is maybe a 5.7
+
+> talk CLIFF
+  this isn't the right place for that.
+
+> look CLIFF
+it is a tall CLIFF covered in VINES.
+
+> look
+you STAND at the top of a CLIFF. there are VINES on the
+CLIFF. your PERSP is SIDE.
+
+> climb down
+you can't CLIMB that
+
+> climb vines
+you CLIMB the VINES. it is maybe a 5.7
+
+> look
+you STAND at the base of a CLIFF. there are VINES on the
+CLIFF. your PERSP is SIDE. EXITS are LEFT and RIGHT.
+
+> help
+the CLIFF doesn't need your HELP.
+
+> go right
+you GO RIGHT.
+
+you are at the CAVE MOUTH. PERSP is SIDE. EXITS are LEFT 
+and IN.
+
+> go in
+you can't GO IN ALONE. you need to WAIT for your FRND.
+
+> go left
+you GO LEFT.
+
+you STAND at the base of a CLIFF. there are VINES on the
+CLIFF. your PERSP is SIDE. EXITS are LEFT and RIGHT.
+
+> go left
+you GO LEFT.
+
+there is a ROCK on some GRASS here. on the other side of 
+the ROCK there is a CABIN. your PERSP is SIDE. EXITS are 
+RIGHT.
+
+> take rock
+it is too HEAVY.
+
+> look rock
+not yet...
+
+> look grass
+not yet...
+
+> take grass
+your FRND blocks your PATH
+
+> look frnd
+not yet...
+
+> look
+there is a ROCK on some GRASS here. on the other side of 
+the ROCK there is a CABIN. your PERSP is SIDE. EXITS are 
+RIGHT.
+
+> look cabin
+the ROCK is in the way. you can't SEE it.
+
+> take cabin
+it is too HEAVY.
+
+> go cabin
+you can't GO there.
+
+> go right
+you GO RIGHT.
+
+you STAND at the base of a CLIFF. there are VINES on the
+CLIFF. your PERSP is SIDE. EXITS are LEFT and RIGHT.
+
+> go right
+you GO RIGHT.
+
+you are at the CAVE MOUTH. PERSP is SIDE. EXITS are LEFT 
+and IN.
+
+> go in
+you can't GO IN ALONE. you need to WAIT for your FRND.
+
+> wait
+you WAIT. your FRND arrives.

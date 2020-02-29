@@ -1,0 +1,73 @@
+> look
+you are in a COURT. there is a JUDGE here. the JUDGE is 
+TLKNG. your PERSP is CNMTC. EXITS are list index out of 
+range.
+
+> look JUDGE
+the JUDGE is STCNG you for your CRIMS.
+
+> list'n
+LIST'N to what?
+
+> list'n judge
+  society is a shield against the darkness. it is an
+  intricate machine made of rules. when you BREAK those
+  RULES you destroy the machine, and everyone suffers.
+
+> list'n judge
+  you LURED a MAN into a CAVE and murdered him. 
+
+> look
+you are in a COURT. there is a JUDGE here. the JUDGE is  
+TLKNG. your PERSP is CNMTC. EXITS are list index out of 
+range.
+
+> list'n judge
+  you refuse to ADMIT your GUILT.
+
+> list'n judge
+  you are a FAULT.
+
+> list'n judge
+  I sentence you to 00003 MNTHS.
+
+by then there will be nothing left.
+
+> look
+you are in a COURT. there is a JUDGE here. there is a 
+SNTNC here. your PERSP is CNMTC. EXITS are list index out 
+of range.
+
+> talk JUDGE
+there is nothing you can say.
+
+> help
+there is no one here you can HELP.
+
+> look COURT
+it is a NORM'L COURT.
+
+> look sntnc
+the SNTNC contains 00003 MNTHS.
+
+> take COURT
+it is too HEAVY.
+
+> take JUDGE
+it is too HEAVY.
+
+> take SNTNC
+you receive your SNTNC.
+
+> look
+you are in a COURT. there is a JUDGE here. there is a SNTNC
+here. your PERSP is CNMTC. EXITS are PRIS'N.
+
+> look PRIS'N
+it doesn't look good.
+
+> take PRIS'N
+it is too HEAVY.
+
+> go PRIS'N
+you go to PRIS'N.

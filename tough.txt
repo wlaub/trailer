@@ -1,0 +1,104 @@
+> look
+you are in the ARMRY. there are 00001 GUN'S here. there are
+01000 BLLTS here. your PERSP is NSIDE. EXITS are OUT.
+
+> look gun's
+it is a NORM'L GUN'S.
+
+> take gun's
+you take a GUN'S. there are 00000 GUN's here.
+
+> go out
+you GO OUT.
+
+you are in a HLLWY. There is a DOOR here. there is a GUARD 
+here. PERSP is SIDE. EXITS are LEFT and DOOR.
+
+> look GUARD
+the GUARD blocks the PATH to the RIGHT.
+
+> talk GUARD
+  I need 01243 BLLTS. I have 00000 BLLTS.
+
+> go door
+you go through the DOOR.
+
+you are in the ARMRY. there are 01000 BLLTS here. your 
+PERSP is NSIDE. EXITS are OUT.
+
+> take bllts
+you take a BLLTS. there are 00999 BLLTS here.
+
+> inv
+  00001  GUN'S
+  00001  BLLTS
+  GRASS
+
+> take all bllts
+it is too HEAVY.
+
+> take 00999 bllts
+it is too HEAVY.
+
+> help take
+you can't HELP that.
+
+> help
+there is no one here for you to HELP.
+
+> go out
+you GO OUT.
+
+you are in a HLLWY. There is a DOOR here. there is a GUARD 
+here. PERSP is SIDE. EXITS are LEFT and DOOR.
+
+> give bllts
+you can't GIVE that.
+
+> drop bllts
+you drop a BLLTS. There are 00001 BLLTS here.
+
+> talk guard
+  I need 01243 BLLTS. I have 00000 BLLTS.
+
+> take bllts
+you take a BLLTS. There are 00000 BLLTS here.
+
+> use bllts on guard
+you SHOOT the GUARD. it DIES.
+
+> go right
+you can't GO RIGHT.
+
+> look
+you are in a HLLWY. There is a DOOR here. there is a CORPS 
+here. PERSP is SIDE. EXITS are LEFT and DOOR.
+
+> look corps
+the CORPS blocks the PATH to the RIGHT.
+
+> take corps
+it is too HEAVY.
+
+> move corps
+you can't MOVE that.
+
+TIME passes. it is EVNNG. HUNGR increased by 00001. 
+THIRST increased by 00001. 
+ENERGY decreased by 00001.
+
+> inv
+  00001  GUN'S
+  GRASS
+
+> take corps
+it is too HEAVY.
+
+> eat corps
+you EAT the CORPS.
+
+you feel it SLIDE down your THROAT and FILL your BELLY. 
+HUNGR decreased by 00001.
+but you're still HNGRY.
+
+>
