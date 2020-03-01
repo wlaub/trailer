@@ -1,149 +1,149 @@
-> look
+0> look
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> look frnd
+1> look frnd
 this is your best frnd:
   strng 5  int   7
   hair  6  high  8
 
-> talk frnd
+2> talk frnd
   how can we distinguish the original experience from the
   memory? what if this is the memory?
 
-> look cave
+3> look cave
 it is a NORM'L CAVE.
 
-> take rock
+4> take rock
 TAKE what?
 
-> take rocks
+5> take rocks
 you take a ROCKS. There are 00012 ROCKS on the GRND.
 
 Something settles... FIELD STATE changes to STAB'L.
 
-> talk frnd
+6> talk frnd
   if this is memory then we should also be able to remember
   the future.
 
-> go right
+7> go right
 you GO RIGHT. your FRND FLLWS.
 
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> take rocks
+8> take rocks
 please don't.
 
-> talk frnd
+9> talk frnd
 he has stopped talking. he looks upset.
 
-> take rocks
+10> take rocks
 your FRND blocks your PATH.
 
-> go right
+11> go right
 your FRND blocks your PATH.
 
-> go left
+12> go left
 you GO LEFT.
 you are in a CAVE. There are 00012 ROCKS on the GRND. Your 
 PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> take rocks
+13> take rocks
 you take a ROCKS. There are 00011 ROCKS on the GRND.
 
 Something tenses... FIELD STATE changes to VOLT'L.
 
-> take rocks
+14> take rocks
 you take a ROCKS. There are 00010 ROCKS on the GRND.
 
 Something churns... FIELD STATE changes to DIRE.
 
-> take rocks
+15> take rocks
 you take a ROCKS. There are 00009 ROCKS on the GRND.
 
-> take rocks
+16> take rocks
 you take a ROCKS. There are 00008 ROCKS on the GRND.
 
-> take rocks
+17> take rocks
 you take a ROCKS. There are 00007 ROCKS on the GRND.
 
 Something clicks... FIELD STATE changes to CANON.
 
-> take rocks
+18> take rocks
 you take a ROCKS. There are 00006 ROCKS on the GRND.
 
 Something exists... FIELD STATE changes to CAUSAL.
 
-> take rocks
+19> take rocks
 you take a ROCKS. There are 00005 ROCKS on the GRND.
 
-> go right
+20> go right
 you GO RIGHT.
 
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> take rocks
+21> take rocks
 your FRND blocks your PATH.
 
-> take path
+22> take path
 your FRND blocks your PATH.
 
-> talk frnd
+23> talk frnd
 he has stopped talking. he looks upset.
 
-> take frnd
+24> take frnd
 you TAKE the FRND.
 
 you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
 PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> inv
+25> inv
   00008  ROCKS
   GRASS  FRND
 
-> go left
+26> go left
 you GO LEFT.
 you are in a CAVE. There are 00005 ROCKS on the GRND. Your 
 PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> drop frnd
+27> drop frnd
 you DROP the FRND.
 
 you are in a CAVE. There are 00005 ROCKS on the GRND. There
 is a FRND here. Your PERSP is SIDE. EXITS are LEFT and 
 RIGHT.
 
-> go right
+28> go right
 you GO RIGHT.
 
 you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
 PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> take rocks
+29> take rocks
 you take a ROCKS. There are 00012 ROCKS on the GRND.
 
-> go right
+30> go right
 you GO RIGHT.
 
 you are in a CAVE with your FRND. There is a CHASM here. 
 There is a NATR'L BRDGE over the CHASM. EXITS are RIGHT, 
 across the CHASM.
 
-> look chasm
+31> look chasm
 your eyes slide away from it. you can't bear to look into 
 it.
 
-> look frnd
+32> look frnd
 this is your best frnd:
   strng 2  int   7
   hair  6  high  0
 
-> talk frnd
+33> talk frnd
 he stares silently across the CHASM, sweating. he is PALE.
 
-> go left
+34> go left
 you GO RIGHT, crossing the NATR'L BRDGE. your FRND FLLWS.
 
 you drop a ROCKS on the way.
@@ -152,7 +152,7 @@ you are in a CAVE with your FRND. you hear dripping. you
 feel a BLACK WIND blowing through you from deeper in the 
 CAVE. EXITS are RIGHT, deeper into the CAVE.
 
-> talk frnd
+35> talk frnd
 you GO RIGHT, deeper into the CAVE. your FRND FLLWS.
 
 the BLACK WIND HOWLS.
