@@ -1,41 +1,41 @@
-0> look
+00> look
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-1> look frnd
+01> look frnd
 this is your best frnd:
   strng 5  int   7
   hair  6  high  8
 
-2> talk frnd
+02> talk frnd
   how can we distinguish the original experience from the
   memory? what if this is the memory?
 
-3> look cave
+03> look cave
 it is a NORM'L CAVE.
 
-4> take rock
+04> take rock
 TAKE what?
 
-5> take rocks
+05> take rocks
 you take a ROCKS. There are 00012 ROCKS on the GRND.
 
 Something settles... FIELD STATE changes to STAB'L.
 
-6> talk frnd
+06> talk frnd
   if this is memory then we should also be able to remember
   the future.
 
-7> go right
+07> go right
 you GO RIGHT. your FRND FLLWS.
 
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-8> take rocks
+08> take rocks
 please don't.
 
-9> talk frnd
+09> talk frnd
 he has stopped talking. he looks upset.
 
 10> take rocks
@@ -157,7 +157,7 @@ you GO RIGHT, deeper into the CAVE. your FRND FLLWS.
 
 the BLACK WIND HOWLS.
 
-> 
+36> 
 
     ¦¦¦¦  ¦     ¦¦¦¦  ¦   ¦  ¦¦¦     ¦   ¦  ¦¦¦  ¦   ¦
     ¦   ¦ ¦     ¦   ¦ ¦¦  ¦ ¦        ¦¦ ¦¦ ¦   ¦ ¦¦  ¦
@@ -167,4 +167,4 @@ the BLACK WIND HOWLS.
 
               COMING TO HOME VIDEO AND STEAM              
                          4/20/20                         
->                 
+37>                 
