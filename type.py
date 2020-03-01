@@ -7,6 +7,7 @@ from pygame.locals import *
 #9 text lines
 #1 command lines
 
+
 window = """┌──────────────────────────────────────────────────────────┐
 │█                                                        █│
 │                                                          │
@@ -57,6 +58,13 @@ infile = sys.argv[1]
 lines = open(infile, 'r').read().upper().split('\n')
 lines = [' ' if len(x) == 0 else x for x in lines]
 
+bgraw = open('bldng_bg.txt','r', encoding='utf-8').read().split('\n')
+backgrounds = []
+while len(bgraw) > 0:
+    backgrounds.append(bgraw[:12])
+    bgraw = bgraw[12:]
+
+
 image = ['█'*58]*12
 outbuf, lines = lines[:9], lines[9:]
 command = ''
@@ -68,7 +76,7 @@ meas_idx = 0
 for line in lines:
     if len(line) > 2 and line[2] == '>':
         line = line[4:]
-
+        image = backgrounds[meas_idx]
         tframe = render(command, outbuf, image)
         frames.append((meas_time, tframe))
 
