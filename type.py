@@ -32,9 +32,6 @@ window = """┌─────────────────────�
                                                            ┴
 >""".split('\n')
 
-bpms = [100, 100, 120, 140, 160, 180]
-beatrate = 60/bpms[0]
-
 typerate = 0.25
 linerate = 0.5
 measrate = 7
@@ -76,18 +73,18 @@ for line in lines:
         frames.append((meas_time, tframe))
 
         next_time = meas_time
-        meas_time += measrate*beatrate
+        meas_time += measrate#*beatrate
 
         meas_idx += 1
-        if meas_idx % 7 == 0:
-            beatrate = 60/bpms[int(meas_idx/7)]
+#        if meas_idx % 7 == 0:
+#            beatrate = 60/bpms[int(meas_idx/7)]
 
         while len(line) > 0:
             command += line[0]
             line = line[1:]
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
-            next_time += typerate*beatrate
+            next_time += typerate#*beatrate
 
         outbuf.append('> '+command)
         command = ''
@@ -95,7 +92,7 @@ for line in lines:
         outbuf.append(line)
         tframe = render(command, outbuf, image)
         frames.append((next_time, tframe))
-        next_time += linerate*beatrate
+        next_time += linerate#*beatrate
 
  
 
@@ -107,11 +104,35 @@ music.set_volume(.1)
 music.play()
 
 #exit()
+import numpy as np
 
-for next_time, frame in frames:
-    tdelta = next_time - (time.time()-start_time)
-    print('')
-    print(frame, end='')
-    if tdelta > 0:
-        time.sleep(tdelta)
-    pass
+bpms = [100, 100, 120, 140, 160, 180]
+beatrate = 60/bpms[0]
+
+epochs = list(np.cumsum([ 7*7*60/x for x in bpms]))
+epochs.insert(0,0)
+
+meas_idx = 0
+
+next_time = 0
+
+def map_beat(beat):
+    """
+    Return the time that the beat happens given the time changes
+    """
+    epoch = int(beat/49)
+    beatoff = beat - epoch*49
+    result = epochs[epoch]+beatoff*60/(bpms[epoch])
+    return result
+
+for beat, frame in frames:
+    
+    next_time = map_beat(beat)
+
+
+    if True:
+        tdelta = next_time - (time.time()-start_time)
+        print('')
+        print(frame, end='')
+        if tdelta > 0:
+            time.sleep(tdelta)
