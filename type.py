@@ -55,7 +55,7 @@ def render(command, outbuf, image_lines):
     return '\n'.join(out_frame)
 
 infile = sys.argv[1]
-lines = open(infile, 'r').read().upper().split('\n')
+lines = open(infile, 'r', encoding='utf-8').read().upper().split('\n')
 lines = [' ' if len(x) == 0 else x for x in lines]
 
 bgraw = open('bldng_bg.txt','r', encoding='utf-8').read().split('\n')
