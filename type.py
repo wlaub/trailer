@@ -154,9 +154,6 @@ def render_title(top, bot):
 
     return '\n'.join(lines)
 
-print(render_title('defy', "norm'l"))
-exit()
-
 def fade_img(image):
     #fade out the image
     result = []
@@ -229,16 +226,70 @@ def execute_command(meas_idx, cmd_idx):
         frames.append((next_time, tframe))
         next_time += linerate#*beatrate
 
-for j, i in enumerate(range(2,38)):
-    execute_command(j, i)
+script = [
+#0
+['title', 'top', 'bot'],
+['cmd', 3],
+#2: ['title', 'x', 'x'],
+['cmd', 4],
+['cmd', 5],
+['cmd', 6],
+['cmd', 7],
+['title', 'this', "sum'r"],
+#1
+['cmd', 9],
+['cmd', 10],
+['cmd', 11],
+['cmd', 12],
+['cmd', 13],
+['cmd', 14],
+['title', 'defy', "norm'l"],
+#2
+['cmd', 16],
+['cmd', 17],
+['cmd', 18],
+['cmd', 19],
+['cmd', 20],
+['cmd', 21],
+['title', 'b', 'tough'],
+#3
+['cmd', 23],
+['cmd', 24],
+['cmd', 25],
+['cmd', 26],
+['cmd', 27],
+['cmd', 28],
+['title', 'b', 'sexy'],
+#4
+['cmd', 30],
+['cmd', 31],
+['cmd', 32],
+['cmd', 33],
+['cmd', 34],
+['cmd', 35],
+['cmd', 36],
+#end
+['cmd', 37],
+]
+
+for meas_idx, step in enumerate(script):
+    if step[0] == 'cmd':
+        execute_command(meas_idx, step[1])
+    elif step[0] == 'title':
+        frames.append((meas_idx*measrate, render_title(step[1], '')))
+        image = render_title(step[1], step[2])
+        frames.append((meas_idx*measrate+2, image))
+        for i in range(4):
+            frames.append((meas_idx*measrate+5+i/2, image))
+            image = '\n'.join(fade_img(image.split('\n')))
+
+
+#for j, i in enumerate(range(2,38)):
+#    execute_command(j, i)
 #execute_command(0, 2)
 
 pygame.mixer.init(frequency=44100)
 music = pygame.mixer.Sound('Title2.ogg')
-
-start_time = time.time()
-music.set_volume(.1)
-music.play()
 
 #exit()
 import numpy as np
@@ -262,14 +313,19 @@ def map_beat(beat):
     result = epochs[epoch]+beatoff*60/(bpms[epoch])
     return result
 
+start_time = time.time()
+music.set_volume(.1)
+music.play()
+
+
 for beat, frame in frames:
     
     next_time = map_beat(beat)
 
-
     if True:
         tdelta = next_time - (time.time()-start_time)
-        print('')
-        print(frame, end='')
         if tdelta > 0:
             time.sleep(tdelta)
+        print('')
+        print(frame, end='')
+            
