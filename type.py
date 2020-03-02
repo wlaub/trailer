@@ -137,9 +137,10 @@ backgrounds = backgrounds[1:]
 charsraw = open('chars.txt', 'r', encoding='utf-8').read().split('\n')
 charsmap = {}
 for char_idx in range(26):
-    charsmap[chr(0x41+char_idx)]=charsraw[6*char_idx:6*char_idx+5]
+    charsmap[chr(0x41+char_idx)]=charsraw[6*char_idx+1:6*char_idx+1+5]
 
 charsmap["'"]=[' \u2588 ',' \u2588 ','   ','   ','   ']
+charsmap[' ']=['   ']*5
 
 def render_title(top, bot):
     """
@@ -228,11 +229,10 @@ def execute_command(meas_idx, cmd_idx):
 
 script = [
 #0
-['title', 'top', 'bot'],
-['cmd', 3],
-#2: ['title', 'x', 'x'],
-['cmd', 4],
-['cmd', 5],
+['title', "wrn'ng", ' '], #todo: trailer intro
+['title', 'this', "trl'r"], #this trailer
+['title', 'is', 'not'], #is not
+['title', 'canon', ' '], #canon todo: green
 ['cmd', 6],
 ['cmd', 7],
 ['title', 'this', "sum'r"],
