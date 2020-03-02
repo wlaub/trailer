@@ -146,8 +146,8 @@ def render_title(top, bot):
     render the title card with the top and bottom text
     """
 
-    lines = [' ']*24
-    for ypos, text in [[4, top],[17, bot]]:
+    lines = ['    ']*24
+    for ypos, text in [[3, top],[16, bot]]:
         for char in text.upper():
             for y_idx, cline in enumerate(charsmap[char]):
                 lines[ypos+y_idx] += cline + ' '
