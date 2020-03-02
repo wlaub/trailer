@@ -46,6 +46,7 @@ your FRND blocks your PATH.
 
 12> go left
 you GO LEFT.
+
 you are in a CAVE. There are 00012 ROCKS on the GRND. Your 
 PERSP is SIDE. EXITS are LEFT and RIGHT.
 

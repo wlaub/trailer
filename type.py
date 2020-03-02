@@ -37,6 +37,61 @@ typerate = 0.25
 linerate = 0.5
 measrate = 7
 
+class Cmd():
+    """
+    bg_idx - the image displayed while typing the command
+
+    Sequence values:
+    -2 = fade out
+    -1 = linefeed 1
+    >0 = change to this background
+    if nothing left, feed the remaining lines
+    """
+    def __init__(self, bg_idx, sequence = []):
+        self.bg_idx = bg_idx
+        self.sequence = sequence
+        pass
+
+commands = {
+1: Cmd(0, []),
+2: Cmd(1, [-1, 2, -1, 3, -1, 4]),
+3: Cmd(0, []),
+4: Cmd(0, []),
+5: Cmd(5, []),
+6: Cmd(6, [-1, 7, -1, 8, -1, 9]),
+7: Cmd(6, [-1,-2,-1,10]),
+8: Cmd(10, []),
+9: Cmd(10, []),
+10: Cmd(10, []),
+11: Cmd(10, []),
+12: Cmd(10, [-1,-2,-1,11]),
+13: Cmd(11, [12]),
+14: Cmd(12, [13]),
+15: Cmd(13, [14]),
+16: Cmd(14, [15]),
+17: Cmd(15, [16]),
+18: Cmd(16, [17]),
+19: Cmd(17, [18]),
+20: Cmd(18, [-1,-2,-1,10]),
+21: Cmd(10, []),
+22: Cmd(10, []),
+23: Cmd(10, []),
+24: Cmd(10, [19]),
+25: Cmd(19, []),
+26: Cmd(19, [-1,-2,-1,18]),
+27: Cmd(18, [20]),
+28: Cmd(20, [-1,-2,-1,19]),
+29: Cmd(19, [21]),
+30: Cmd(21, [-1,-2,-1,22]),
+31: Cmd(22, []),
+32: Cmd(22, []),
+33: Cmd(22, []),
+34: Cmd(22, [-1,23,-2,-1,24]),
+35: Cmd(24, [-1,-2,-1,25]),
+36: Cmd(25, []),
+37: Cmd(25, []),
+}
+
 frames = []
 
 def render(command, outbuf, image_lines):
