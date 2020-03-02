@@ -88,8 +88,8 @@ commands = {
 33: Cmd(22, []),
 34: Cmd(22, [-1,23,-2,-1,24]),
 35: Cmd(24, [-1,-2,-1,25]),
-36: Cmd(25, []),
-37: Cmd(25, []),
+36: Cmd(25, [-1,-2]),
+37: Cmd(25, []), #TODO: Change this
 }
 
 frames = []
@@ -132,6 +132,20 @@ while len(bgraw) > 0:
 
 backgrounds = backgrounds[1:]
 
+def fade_img(image):
+    #fade out the image
+    result = []
+    charmap = {
+        '\u2588':'\u2592',
+        '\u2592':'\u2591',
+        '\u2591':'.',  
+    }
+    for line in image:
+        nline = ''.join([charmap.get(x, ' ')for x in line])
+        result.append(nline)
+
+    return result
+
 def execute_command(meas_idx, cmd_idx):
     #
     meas_time = meas_idx*measrate
@@ -168,18 +182,22 @@ def execute_command(meas_idx, cmd_idx):
             line_idx += 1
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
-            next_time += linerate#*beatrate
+            next_time += linerate
         elif step > 0: #update background
             image = backgrounds[step]
-#            print(f'bg: {step}')
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
-#            next_time += linerate#*beatrate
+#            next_time += linerate
         elif step == -2: #fade out
-            pass
+            for i in range(4):
+                image = fade_img(image)
+                tframe = render(command, outbuf, image)
+                frames.append((next_time, tframe))
+                next_time += typerate
+
 
     #feed the remaining lines
-    while not '>' in lines[line_idx]:
+    while line_idx < len(lines) and not '>' in lines[line_idx]:
         outbuf.append(lines[line_idx])
         line_idx += 1
         tframe = render(command, outbuf, image)
