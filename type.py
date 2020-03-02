@@ -54,12 +54,12 @@ class Cmd():
 
 commands = {
 1: Cmd(0, []),
-2: Cmd(1, [-1, 2, -1, 3, -1, 4]),
+2: Cmd(0, [-1, 2, -1, 3, -1, 4]),
 3: Cmd(0, []),
 4: Cmd(0, []),
-5: Cmd(5, []),
-6: Cmd(6, [-1, 7, -1, 8, -1, 9]),
-7: Cmd(6, [-1,-2,-1,10]),
+5: Cmd(0, [5]),
+6: Cmd(5, [-1, 7, -1, 8, -1, 9]),
+7: Cmd(5, [-1,-2,-1,10]),
 8: Cmd(10, []),
 9: Cmd(10, []),
 10: Cmd(10, []),
@@ -117,7 +117,6 @@ lines = [' ' if len(x) == 0 else x for x in lines]
 command_index = {}
 for idx, line in enumerate(lines):
     if '>' in line:
-        print(line)
         command_index[int(line[:2])] = idx
 
 #strip command numbers
@@ -131,6 +130,7 @@ while len(bgraw) > 0:
     backgrounds.append(bgraw[:12])
     bgraw = bgraw[12:]
 
+backgrounds = backgrounds[1:]
 
 def execute_command(meas_idx, cmd_idx):
     #
@@ -171,9 +171,10 @@ def execute_command(meas_idx, cmd_idx):
             next_time += linerate#*beatrate
         elif step > 0: #update background
             image = backgrounds[step]
+#            print(f'bg: {step}')
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
-            next_time += linerate#*beatrate
+#            next_time += linerate#*beatrate
         elif step == -2: #fade out
             pass
 
@@ -185,8 +186,8 @@ def execute_command(meas_idx, cmd_idx):
         frames.append((next_time, tframe))
         next_time += linerate#*beatrate
 
-for i in range(2,37):
-    execute_command(i-2, i)
+for j, i in enumerate(range(2,38)):
+    execute_command(j, i)
 #execute_command(0, 2)
 
 pygame.mixer.init(frequency=44100)
