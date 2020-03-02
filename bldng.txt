@@ -1,4 +1,7 @@
-﻿00> look
+﻿
+
+
+00> look
 you are in a CAVE with your FRND. There are 00013 ROCKS on 
 the GRND. your PERSP is SIDE. EXITS are LEFT and RIGHT.
 

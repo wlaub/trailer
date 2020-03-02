@@ -68,7 +68,7 @@ commands = {
 13: Cmd(11, [12]),
 14: Cmd(12, [13]),
 15: Cmd(13, [14]),
-16: Cmd(14, [15]),
+16: Cmd(14, [15]), #scramble this
 17: Cmd(15, [16]),
 18: Cmd(16, [17]),
 19: Cmd(17, [18]),
@@ -113,6 +113,18 @@ infile = sys.argv[1]
 lines = open(infile, 'r', encoding='utf-8').read().upper().split('\n')
 lines = [' ' if len(x) == 0 else x for x in lines]
 
+#map command numbers to line numbers
+command_index = {}
+for idx, line in enumerate(lines):
+    if '>' in line:
+        print(line)
+        command_index[int(line[:2])] = idx
+
+#strip command numbers
+lines = list(map(lambda x: x if not '>' in x else x[2:], lines))
+
+lines_base = lines
+
 bgraw = open('bldng_bg.txt','r', encoding='utf-8').read().split('\n')
 backgrounds = []
 while len(bgraw) > 0:
@@ -120,44 +132,62 @@ while len(bgraw) > 0:
     bgraw = bgraw[12:]
 
 
-image = ['█'*58]*12
-outbuf, lines = lines[:9], lines[9:]
-command = ''
-next_time = 0
-meas_time = 0
+def execute_command(meas_idx, cmd_idx):
+    #
+    meas_time = meas_idx*measrate
+    next_time = meas_time
 
-meas_idx = 0
+    start_idx = command_index[cmd_idx]
 
-for line in lines:
-    if len(line) > 2 and line[2] == '>':
-        line = line[4:]
-        image = backgrounds[meas_idx]
+    image = backgrounds[commands[cmd_idx].bg_idx]
+    outbuf, lines = lines_base[start_idx-9:start_idx], lines_base[start_idx:]
+    command = ''
+
+    line = lines[0]
+
+    #first type out the command
+    line = line[2:]
+    tframe = render(command, outbuf, image)
+    frames.append((meas_time, tframe))
+
+    while len(line) > 0:
+        command += line[0]
+        line = line[1:]
         tframe = render(command, outbuf, image)
-        frames.append((meas_time, tframe))
+        frames.append((next_time, tframe))
+        next_time += typerate#*beatrate
 
-        next_time = meas_time
-        meas_time += measrate#*beatrate
+    outbuf.append('> '+command)
+    command = ''
 
-        meas_idx += 1
-#        if meas_idx % 7 == 0:
-#            beatrate = 60/bpms[int(meas_idx/7)]
-
-        while len(line) > 0:
-            command += line[0]
-            line = line[1:]
+    #then run the command sequence
+    line_idx = 1
+    for step in commands[cmd_idx].sequence:
+        if step == -1: #feed line
+            outbuf.append(lines[line_idx])
+            line_idx += 1
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
-            next_time += typerate#*beatrate
+            next_time += linerate#*beatrate
+        elif step > 0: #update background
+            image = backgrounds[step]
+            tframe = render(command, outbuf, image)
+            frames.append((next_time, tframe))
+            next_time += linerate#*beatrate
+        elif step == -2: #fade out
+            pass
 
-        outbuf.append('> '+command)
-        command = ''
-    else:
-        outbuf.append(line)
+    #feed the remaining lines
+    while not '>' in lines[line_idx]:
+        outbuf.append(lines[line_idx])
+        line_idx += 1
         tframe = render(command, outbuf, image)
         frames.append((next_time, tframe))
         next_time += linerate#*beatrate
 
- 
+for i in range(2,37):
+    execute_command(i-2, i)
+#execute_command(0, 2)
 
 pygame.mixer.init(frequency=44100)
 music = pygame.mixer.Sound('Title2.ogg')
