@@ -124,6 +124,7 @@ lines = list(map(lambda x: x if not '>' in x else x[2:], lines))
 
 lines_base = lines
 
+#load backgrounds
 bgraw = open('bldng_bg.txt','r', encoding='utf-8').read().split('\n')
 backgrounds = []
 while len(bgraw) > 0:
@@ -131,6 +132,30 @@ while len(bgraw) > 0:
     bgraw = bgraw[12:]
 
 backgrounds = backgrounds[1:]
+
+#load titlecard characters
+charsraw = open('chars.txt', 'r', encoding='utf-8').read().split('\n')
+charsmap = {}
+for char_idx in range(26):
+    charsmap[chr(0x41+char_idx)]=charsraw[6*char_idx:6*char_idx+5]
+
+charsmap["'"]=[' \u2588 ',' \u2588 ','   ','   ','   ']
+
+def render_title(top, bot):
+    """
+    render the title card with the top and bottom text
+    """
+
+    lines = [' ']*24
+    for ypos, text in [[4, top],[17, bot]]:
+        for char in text.upper():
+            for y_idx, cline in enumerate(charsmap[char]):
+                lines[ypos+y_idx] += cline + ' '
+
+    return '\n'.join(lines)
+
+print(render_title('defy', "norm'l"))
+exit()
 
 def fade_img(image):
     #fade out the image
