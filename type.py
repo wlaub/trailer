@@ -106,6 +106,7 @@ def render(command, outbuf, image_lines):
     out_frame = list(window)
     for idx, line in enumerate(out_lines):
         out_frame[idx+14] = line + window[idx+14][len(line):]
+        if len(line) > 60: out_frame += window[idx+14][-1]
 
     for idx, line in enumerate(image_lines):
         out_frame[idx+1] = window[idx+1][0] + line + window[idx+1][len(line)+1:]
