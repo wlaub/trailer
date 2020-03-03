@@ -3,6 +3,10 @@ import time
 import pygame
 from pygame.locals import *
 
+import colorama
+
+colorama.init()
+
 #12 image lines
 #9 text lines
 #1 command lines
@@ -142,16 +146,24 @@ for char_idx in range(26):
 charsmap["'"]=[' \u2588 ',' \u2588 ','   ','   ','   ']
 charsmap[' ']=['   ']*5
 
-def render_title(top, bot):
+def render_title(top, bot, green = False):
     """
     render the title card with the top and bottom text
     """
+    lines = []
+    if green:
+        lines.extend([colorama.Fore.GREEN+'    ']*12)
+    else:
+        lines.extend(['    ']*12)
 
-    lines = ['    ']*24
+    lines.extend(['    ']*12)
+
     for ypos, text in [[3, top],[16, bot]]:
         for char in text.upper():
             for y_idx, cline in enumerate(charsmap[char]):
                 lines[ypos+y_idx] += cline + ' '
+
+    lines = map(lambda x: x+colorama.Fore.RESET, lines)
 
     return '\n'.join(lines)
 
@@ -161,9 +173,13 @@ def fade_img(image):
     charmap = {
         '\u2588':'\u2592',
         '\u2592':'\u2591',
-        '\u2591':'.',  
+        '\u2591':'.', 
+        'G': colorama.Fore.GREEN,
+        'R': colorama.Fore.RESET,
     }
     for line in image:
+        line = line.replace(colorama.Fore.GREEN, 'G')
+        line = line.replace(colorama.Fore.RESET, 'R')       
         nline = ''.join([charmap.get(x, ' ')for x in line])
         result.append(nline)
 
@@ -232,7 +248,7 @@ script = [
 ['title', "wrn'ng", ' '], #todo: trailer intro
 ['title', 'this', "trl'r"], #this trailer
 ['title', 'is', 'not'], #is not
-['title', 'canon', ' '], #canon todo: green
+['title', 'canon', ' ', True], #canon todo: green
 ['cmd', 6],
 ['cmd', 7],
 ['title', 'this', "sum'r"],
@@ -276,8 +292,10 @@ for meas_idx, step in enumerate(script):
     if step[0] == 'cmd':
         execute_command(meas_idx, step[1])
     elif step[0] == 'title':
-        frames.append((meas_idx*measrate, render_title(step[1], '')))
-        image = render_title(step[1], step[2])
+        green = False
+        if len(step) > 3: green = step[3]
+        frames.append((meas_idx*measrate, render_title(step[1], '', green)))
+        image = render_title(step[1], step[2], green)
         frames.append((meas_idx*measrate+2, image))
         for i in range(4):
             frames.append((meas_idx*measrate+5+i/2, image))
