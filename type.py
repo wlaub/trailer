@@ -286,10 +286,10 @@ script = [
 ['cmd', 35],
 ['cmd', 36],
 #end
-['cmd', 37],
+#['cmd', 37],
 ]
 
-for meas_idx, step in enumerate(script[33:]):
+for meas_idx, step in enumerate(script[:]):
     if step[0] == 'cmd':
         execute_command(meas_idx, step[1])
     elif step[0] == 'title':
@@ -303,7 +303,10 @@ for meas_idx, step in enumerate(script[33:]):
             image = '\n'.join(fade_img(image.split('\n')))
 
 nframe = str(frames[-1][1]).split('\n')
-base_time = frames[-1][0]+5
+base_time = frames[-1][0]+2+5
+for i in range(4): #todo: ensure some refresh glitches here?
+    frames.append((base_time+i/4-1, '\n'.join(nframe)))
+
 nframe[-2] = colorama.Fore.GREEN + nframe[-2] + colorama.Fore.RESET
 frames.append((base_time-.125, '\n'.join(nframe)))
 
