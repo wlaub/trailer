@@ -302,10 +302,12 @@ for meas_idx, step in enumerate(script):
             frames.append((meas_idx*measrate+5+i/2, image))
             image = '\n'.join(fade_img(image.split('\n')))
 
-nframe = str(frames[-1][1])
-#TODO: Flash green on date
-#Then delete (2 frames)
+nframe = str(frames[-1][1]).split('\n')
+nframe[-2] = colorama.Fore.GREEN + nframe[-2] + colorama.Fore.RESET
+frames.append((frames[-1][0]+3, '\n'.join(nframe)))
 
+nframe = str(frames[-2][1]).split('\n')
+frames.append((frames[-2][0]+3+.125, '\n'.join(nframe)))
 
 #for j, i in enumerate(range(2,38)):
 #    execute_command(j, i)
