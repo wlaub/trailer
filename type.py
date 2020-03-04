@@ -5,6 +5,8 @@ from pygame.locals import *
 
 import colorama
 
+import numpy as np
+
 colorama.init()
 
 #12 image lines
@@ -92,7 +94,7 @@ commands = {
 33: Cmd(22, []),
 34: Cmd(22, [-1,23,-2,-1,24]),
 35: Cmd(24, [-1,-2,-1,25]),
-36: Cmd(25, [-1,-2]),
+36: Cmd(25, [-1,-2, -3]),
 37: Cmd(-1, []), #TODO: Change this
 }
 
@@ -136,7 +138,7 @@ while len(bgraw) > 0:
     backgrounds.append(bgraw[:12])
     bgraw = bgraw[12:]
 
-backgrounds = backgrounds[1:]
+#backgrounds = backgrounds[1:]
 
 #load titlecard characters
 charsraw = open('chars.txt', 'r', encoding='utf-8').read().split('\n')
@@ -193,7 +195,7 @@ def execute_command(meas_idx, cmd_idx):
 
     start_idx = command_index[cmd_idx]
 
-    image = backgrounds[commands[cmd_idx].bg_idx]
+    image = backgrounds[commands[cmd_idx].bg_idx+1]
     outbuf, lines = lines_base[start_idx-9:start_idx], lines_base[start_idx:]
     command = ''
 
@@ -223,11 +225,17 @@ def execute_command(meas_idx, cmd_idx):
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
             next_time += linerate
-        elif step > 0: #update background
-            image = backgrounds[step]
+        elif step >= 0: #update background
+            image = backgrounds[step+1]
             tframe = render(command, outbuf, image)
             frames.append((next_time, tframe))
 #            next_time += linerate
+        elif step == -3: #update background
+            image = backgrounds[0]
+            tframe = render(command, outbuf, image)
+            frames.append((next_time, tframe))
+#            next_time += linerate
+ 
         elif step == -2: #fade out
             for i in range(4):
                 image = fade_img(image)
@@ -249,14 +257,14 @@ script = [
 ['title', "wrn'ng", ' '], #todo: trailer intro
 ['title', 'this', "trl'r"], #this trailer
 ['title', 'is', 'not'], #is not
-['title', 'canon', ' ', True], #canon todo: green
-['cmd', 6],
-['cmd', 7],
+['title', 'canon', ' ', True], #canon
+['cmd', 3],
+['cmd', 4],
 ['title', 'this', "sum'r"],
 #1
+['cmd', 6],
+['cmd', 7],
 ['cmd', 9],
-['cmd', 10],
-['cmd', 11],
 ['cmd', 12],
 ['cmd', 13],
 ['cmd', 14],
@@ -289,6 +297,8 @@ script = [
 #['cmd', 37],
 ]
 
+#render frames
+
 for meas_idx, step in enumerate(script[:]):
     if step[0] == 'cmd':
         execute_command(meas_idx, step[1])
@@ -302,9 +312,11 @@ for meas_idx, step in enumerate(script[:]):
             frames.append((meas_idx*measrate+5+i/2, image))
             image = '\n'.join(fade_img(image.split('\n')))
 
+#ending frames
+
 nframe = str(frames[-1][1]).split('\n')
 base_time = frames[-1][0]+2+5
-for i in range(4): #todo: ensure some refresh glitches here?
+for i in range(4): 
     frames.append((base_time+i/4-1, '\n'.join(nframe)))
 
 nframe[-2] = colorama.Fore.GREEN + nframe[-2] + colorama.Fore.RESET
@@ -314,20 +326,10 @@ for i in range(4):
     nframe = fade_img(nframe)
     frames.append((base_time+i/2, '\n'.join(nframe)))
 
-"""
-nframe = str(frames[-2][1]).split('\n')
-frames.append((frames[-2][0]+3+.125, '\n'.join(nframe)))
-"""
-
-#for j, i in enumerate(range(2,38)):
-#    execute_command(j, i)
-#execute_command(0, 2)
+#start playback
 
 pygame.mixer.init(frequency=44100)
 music = pygame.mixer.Sound('Title2.ogg')
-
-#exit()
-import numpy as np
 
 bpms = [100, 100, 120, 140, 160, 180]
 beatrate = 60/bpms[0]
