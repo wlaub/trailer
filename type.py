@@ -71,11 +71,11 @@ commands = {
 12: Cmd(10, [-1,-2,-1,11]),
 13: Cmd(11, [12]),
 14: Cmd(12, [13]),
-15: Cmd(13, [14]),
-16: Cmd(14, [15]), #scramble this
-17: Cmd(15, [16]),
-18: Cmd(16, [17]),
-19: Cmd(17, [18]),
+15: Cmd(13, [14]), #18, 16, 19,17
+18: Cmd(14, [15]), #drain rocks in correct sequence
+16: Cmd(15, [16]), #scramble this
+19: Cmd(16, [17]),
+17: Cmd(17, [18]), #end on canon
 20: Cmd(18, [-1,-2,-1,10]),
 21: Cmd(10, []),
 22: Cmd(10, []),
@@ -262,10 +262,10 @@ script = [
 ['cmd', 14],
 ['title', 'defy', "norm'l"],
 #2
-['cmd', 16],
-['cmd', 17],
 ['cmd', 18],
+['cmd', 16],
 ['cmd', 19],
+['cmd', 17],
 ['cmd', 20],
 ['cmd', 21],
 ['title', 'b', 'tough'],
@@ -289,7 +289,7 @@ script = [
 ['cmd', 37],
 ]
 
-for meas_idx, step in enumerate(script):
+for meas_idx, step in enumerate(script[33:]):
     if step[0] == 'cmd':
         execute_command(meas_idx, step[1])
     elif step[0] == 'title':
@@ -303,11 +303,18 @@ for meas_idx, step in enumerate(script):
             image = '\n'.join(fade_img(image.split('\n')))
 
 nframe = str(frames[-1][1]).split('\n')
+base_time = frames[-1][0]+5
 nframe[-2] = colorama.Fore.GREEN + nframe[-2] + colorama.Fore.RESET
-frames.append((frames[-1][0]+3, '\n'.join(nframe)))
+frames.append((base_time-.125, '\n'.join(nframe)))
 
+for i in range(4):
+    nframe = fade_img(nframe)
+    frames.append((base_time+i/2, '\n'.join(nframe)))
+
+"""
 nframe = str(frames[-2][1]).split('\n')
 frames.append((frames[-2][0]+3+.125, '\n'.join(nframe)))
+"""
 
 #for j, i in enumerate(range(2,38)):
 #    execute_command(j, i)
