@@ -1,198 +1,174 @@
-**wake up**
+﻿
 
-> look
 
-it is too dark. you must turn on the LIGHT first.
+00> look
+you are in a CAVE with your FRND. There are 00013 ROCKS on 
+the GRND. your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-> listn
+01> look frnd
+this is your best frnd:
+  strng 5  int   7
+  hair  6  high  8
 
-you hear something breathing.
+02> talk frnd
+  how can we distinguish the original experience from the
+  memory? what if this is the memory?
 
-> get up
+03> look cave
+it is a NORM'L CAVE.
 
-it is too dark. you must turn on the LIGHT first.
+04> take rock
+TAKE what?
 
-> use light
+05> take rocks
+you take a ROCKS. There are 00012 ROCKS on the GRND.
 
-the LIGHT is voice activated
+Something settles... FIELD STATE changes to STAB'L.
 
-> say x9vu21jx
+06> talk frnd
+  if this is memory then we should also be able to remember
+  the future.
 
-this will put the game into an unwinnable state. do you wish to proceed?
-y/n > n
+07> go right
+you GO RIGHT. your FRND FLLWS.
 
-> whspr x9vu21jx
+you are in a CAVE with your FRND. There are 00013 ROCKS on 
+the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
+08> take rocks
+please don't.
 
+09> talk frnd
+he has stopped talking. he looks upset.
 
-**slay the foul beast**
+10> take rocks
+your FRND blocks your PATH.
 
-> kill green mnstr
+11> go right
+your FRND blocks your PATH.
 
-hmm
+12> go left
+you GO LEFT.
 
-> slay foul beast
+you are in a CAVE. There are 00012 ROCKS on the GRND. Your 
+PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-you stab the GREEN MNSTR with you SWORD. it dies.
+13> take rocks
+you take a ROCKS. There are 00011 ROCKS on the GRND.
 
-> go right
+Something tenses... FIELD STATE changes to VOLT'L.
 
-the PATH is blocked by the CORPS.
+14> take rocks
+you take a ROCKS. There are 00010 ROCKS on the GRND.
 
-> take corps
+Something churns... FIELD STATE changes to DIRE.
 
-it is too heavy.
+15> take rocks
+you take a ROCKS. There are 00009 ROCKS on the GRND.
 
->take path
+16> take rocks
+you take a ROCKS. There are 00008 ROCKS on the GRND.
 
-this will put the game into an unwinnable state. do you wish to proceed?
-y/n > n
+17> take rocks
+you take a ROCKS. There are 00007 ROCKS on the GRND.
 
-**leave cabin**
+Something clicks... FIELD STATE changes to CANON.
 
-> go right
+18> take rocks
+you take a ROCKS. There are 00006 ROCKS on the GRND.
 
-the DOOR is in the way.
+Something exists... FIELD STATE changes to CAUSAL.
 
-> open door
+19> take rocks
+you take a ROCKS. There are 00005 ROCKS on the GRND.
 
-it is locked.
+20> go right
+you GO RIGHT.
 
-> take door
+you are in a CAVE with your FRND. There are 00013 ROCKS on 
+the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-hmm
+21> take rocks
+your FRND blocks your PATH.
 
-> look
+22> take path
+your FRND blocks your PATH.
 
-you are in the main room of your CABIN. there is a COUCH, a TABLE, a LAMP. there is a HAMMR next to the DOOR.
+23> talk frnd
+he has stopped talking. he looks upset.
 
-exits are LEFT and RIGHT.
+24> take frnd
+you TAKE the FRND.
 
-> look hammr
+you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
+PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-it is a norm'l HAMMR for climbing just like in real life.
+25> inv
+  00008  ROCKS
+  GRASS  FRND
 
-> take hammr
+26> go left
+you GO LEFT.
+you are in a CAVE. There are 00005 ROCKS on the GRND. Your 
+PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-this will put the game into an unwinnable state. do you wish to proceed?
-y/n > n
+27> drop frnd
+you DROP the FRND.
 
-> look couch
+you are in a CAVE. There are 00005 ROCKS on the GRND. There
+is a FRND here. Your PERSP is SIDE. EXITS are LEFT and 
+RIGHT.
 
-the COUCH has seen better days.
+28> go right
+you GO RIGHT.
 
-> look table
+you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
+PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-there is a LAMP on the TABLE. would you like to look inside the TABLE?
-y/n > y
+29> take rocks
+you take a ROCKS. There are 00012 ROCKS on the GRND.
 
-you look inside the TABLE. there is a DRIVR, a KEY, 3 TRASH, and 1 PILL. you take them.
+30> go right
+you GO RIGHT.
 
-> use key on door
+you are in a CAVE with your FRND. There is a CHASM here. 
+There is a NATR'L BRDGE over the CHASM. EXITS are RIGHT, 
+across the CHASM.
 
-hmm
+31> look chasm
+your eyes slide away from it. you can't bear to look into 
+it.
 
-> look door
+32> look frnd
+this is your best frnd:
+  strng 2  int   7
+  hair  6  high  0
 
-it has all the features of a norm'l DOOR.
+33> talk frnd
+he stares silently across the CHASM, sweating. he is PALE.
 
-> use key on lock
+34> go left
+you GO RIGHT, crossing the NATR'L BRDGE. your FRND FLLWS.
 
-the key doesn't fit the LOCK.
-
-the PILL takes effect.
-  +1 HIGH [95%]
-  +1 HAIR [31%].
-
->
-
-**take grass**
-
-> go right
-
-the ROCK is in the way.
-
-> take rock
-
-it is too heavy.
-
-> take grass
-
-you take the GRASS. the ROCK falls through the HOLE.
-
-> look hole
-
-you'd better not.
-
-> go right
-
-you go RIGHT.
-
-**scaffold lvl 1**
-**scaffold lvl 2**
-**scaffold lvl 3**
-**sky cave**
-**syk temple / blessing**
-**get rope**
-
-> take rope
-
-**descend**
-**enter cave**
-**cave bypass / ladder drop**
-**green master**
-
-22 beats
-19 notes
-
-45 measures main
-4 measures ending
-18 scenes = 2.5 measures / scene
-or 13 scenes 3/4/4/3 3/4/4/3 3/4/4/3 3/end
-6x 4, 7x 3
-
-14 letters/measure and/or 7 linefeeds
-duration	tone		task
-4 	intro/active		wake up
-3	questionable	take grass
-4	loud		sky temple
-3.5	revision		sky temple
-3.5	hammer/relax	slay the foul beast
-3	relaxing		leave cabin
-3	descending	scaffold
-4	ping/climbing	sky cave
-2	stationary		scaffold
-2	stationary		scaffold
-3	descend/build	cave bypass
-4	all over, loud	cave / bypass
-2	transition/bounce	scaffold
-2	transition/bounce	scaffold
-2	transition		inside cabin?
-conclusion, reverse cronological + green master ending
-
-conclusion: forward conological:
-* wake up
-* slay the foul beast
-x
-* leave cabid
-* take grass
-x
-* scaffold base
-
-* lvl 1
-* lvl 2
-* lvl 3
-* cave
-* temple
-* rope
-* lvl3
-
-* lvl 2
-* lvl 1
-x
-* cave outside
-* cave inside
-* cave bypass
-* bypass / ladder drop
-
-* green master
+you drop a ROCKS on the way.
+
+you are in a CAVE with your FRND. you hear dripping. you 
+feel a BLACK WIND blowing through you from deeper in the 
+CAVE. EXITS are RIGHT, deeper into the CAVE.
+
+35> talk frnd
+you GO RIGHT, deeper into the CAVE. your FRND FLLWS.
+
+the BLACK WIND HOWLS.
+
+36> 
+
+    ████  █     ████  █   █  ███     █   █  ███  █   █
+    █   █ █     █   █ ██  █ █        ██ ██ █   █ ██  █
+    ████  █     █   █ █ █ █ █  ██    █ █ █ █████ █ █ █
+    █   █ █     █   █ █  ██ █   █    █   █ █   █ █  ██
+    ████  █████ ████  █   █  ███     █   █ █   █ █   █
+
+              COMING TO HOME VIDEO AND STEAM              
+                         4/20/20                         
+37> 
