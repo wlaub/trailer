@@ -39,8 +39,8 @@ window = """┌─────────────────────�
                                                            ┴
 >""".split('\n')
 
-typerate = 0.25
-linerate = 0.5
+typerate = 0.5
+linerate = 1.
 measrate = 7
 
 class Cmd():
@@ -217,6 +217,25 @@ def fade_img(image):
 
     return result
 
+def flash_command(meas_idx, cmd_idx, seq_idx):
+    #
+    meas_time = meas_idx*measrate+seq_idx*flashrate
+    next_time = meas_time
+
+    start_idx = command_index[cmd_idx]
+
+    image = backgrounds[commands[cmd_idx].bg_idx+1]
+    outbuf, lines = lines_base[start_idx-9:start_idx], lines_base[start_idx:]
+    command = ''
+
+    line = lines[0]
+
+    #first type out the command
+    line = line[2:]
+    tframe = render(command, outbuf, image)
+    frames.append((meas_time, tframe))
+
+
 def execute_command(meas_idx, cmd_idx):
     #
     meas_time = meas_idx*measrate
@@ -323,7 +342,10 @@ script = [
 ['cmd', 35],
 ['cmd', 36],
 #end
-#['cmd', 37],
+#['flashcmd', #,#,-1,#,#,-1,#]
+#['flashcmd', #,#,#,#,#,#,#]
+#['flashcmd', #,#,-1,#,#,#,#]
+#['cmd', 36],
 ]
 
 #render frames
@@ -331,6 +353,11 @@ script = [
 for meas_idx, step in enumerate(script[:]):
     if step[0] == 'cmd':
         execute_command(meas_idx, step[1])
+    elif step[0] == 'flashcmd':
+        for seq_idx, fcmd in enumerate(step[1:]):
+            if cmd >= 0:
+                flash_command(meas_idx, fcmd, seq_idx)
+        #step[1:] will be commands to flash or 1 to hold
     elif step[0] == 'title':
         green = False
         if len(step) > 3: green = step[3]
@@ -358,9 +385,9 @@ for i in range(4):
 #start playback
 
 pygame.mixer.init(frequency=44100)
-music = pygame.mixer.Sound('Title2.ogg')
+music = pygame.mixer.Sound('Title7.ogg')
 
-bpms = [100, 100, 120, 140, 160, 180]
+bpms = [240]*7
 beatrate = 60/bpms[0]
 
 epochs = list(np.cumsum([ 7*7*60/x for x in bpms]))
@@ -381,7 +408,7 @@ def map_beat(beat):
 
 start_time = time.time()
 music.set_volume(.1)
-#music.play()
+music.play()
 
 
 for beat, frame in frames:
