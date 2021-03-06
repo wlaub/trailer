@@ -41,6 +41,7 @@ window = """┌─────────────────────�
 
 typerate = 0.5
 linerate = 1.
+flashrate = 1.
 measrate = 7
 
 class Cmd():
@@ -302,10 +303,10 @@ def execute_command(meas_idx, cmd_idx):
 
 script = [
 #0
-#['title', "wrn'ng", ' '], #todo: trailer intro
-#['title', 'this', "trl'r"], #this trailer
-#['title', 'is', 'not'], #is not
-#['title', 'canon', ' ', True], #canon
+['title', "wrn'ng", ' '], #todo: trailer intro
+['title', 'this', "trl'r"], #this trailer
+['title', 'is', 'not'], #is not
+['title', 'canon', ' ', True], #canon
 ['cmd', 3],
 ['cmd', 4],
 ['title', 'this', "sum'r"],
@@ -340,11 +341,29 @@ script = [
 ['cmd', 33],
 ['cmd', 34],
 ['cmd', 35],
+['cmd', 35],
+#5
+['cmd', 30],
+['cmd', 31],
+['cmd', 32],
+['cmd', 33],
+['cmd', 34],
+['cmd', 35],
+['cmd', 35],
+#6
+['cmd', 30],
+['cmd', 31],
+['cmd', 32],
+['flashcmd', 1,4,-1,6,7,-1,9],
+['flashcmd', 12,14,16,17,21,23,25],
+['flashcmd', 27,28,-1,30,31,33,35],
+
 ['cmd', 36],
+#
 #end
-#['flashcmd', #,#,-1,#,#,-1,#]
-#['flashcmd', #,#,#,#,#,#,#]
-#['flashcmd', #,#,-1,#,#,#,#]
+#['flashcmd', #,#,-1,#,#,-1,#],
+#['flashcmd', #,#,#,#,#,#,#],
+#['flashcmd', #,#,-1,#,#,#,#],
 #['cmd', 36],
 ]
 
@@ -355,7 +374,7 @@ for meas_idx, step in enumerate(script[:]):
         execute_command(meas_idx, step[1])
     elif step[0] == 'flashcmd':
         for seq_idx, fcmd in enumerate(step[1:]):
-            if cmd >= 0:
+            if fcmd >= 0:
                 flash_command(meas_idx, fcmd, seq_idx)
         #step[1:] will be commands to flash or 1 to hold
     elif step[0] == 'title':
@@ -387,7 +406,7 @@ for i in range(4):
 pygame.mixer.init(frequency=44100)
 music = pygame.mixer.Sound('Title7.ogg')
 
-bpms = [240]*7
+bpms = [240]*8
 beatrate = 60/bpms[0]
 
 epochs = list(np.cumsum([ 7*7*60/x for x in bpms]))
