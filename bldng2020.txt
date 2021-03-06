@@ -1,0 +1,198 @@
+**wake up**
+
+> look
+
+it is too dark. you must turn on the LIGHT first.
+
+> listn
+
+you hear something breathing.
+
+> get up
+
+it is too dark. you must turn on the LIGHT first.
+
+> use light
+
+the LIGHT is voice activated
+
+> say x9vu21jx
+
+this will put the game into an unwinnable state. do you wish to proceed?
+y/n > n
+
+> whspr x9vu21jx
+
+
+
+**slay the foul beast**
+
+> kill green mnstr
+
+hmm
+
+> slay foul beast
+
+you stab the GREEN MNSTR with you SWORD. it dies.
+
+> go right
+
+the PATH is blocked by the CORPS.
+
+> take corps
+
+it is too heavy.
+
+>take path
+
+this will put the game into an unwinnable state. do you wish to proceed?
+y/n > n
+
+**leave cabin**
+
+> go right
+
+the DOOR is in the way.
+
+> open door
+
+it is locked.
+
+> take door
+
+hmm
+
+> look
+
+you are in the main room of your CABIN. there is a COUCH, a TABLE, a LAMP. there is a HAMMR next to the DOOR.
+
+exits are LEFT and RIGHT.
+
+> look hammr
+
+it is a norm'l HAMMR for climbing just like in real life.
+
+> take hammr
+
+this will put the game into an unwinnable state. do you wish to proceed?
+y/n > n
+
+> look couch
+
+the COUCH has seen better days.
+
+> look table
+
+there is a LAMP on the TABLE. would you like to look inside the TABLE?
+y/n > y
+
+you look inside the TABLE. there is a DRIVR, a KEY, 3 TRASH, and 1 PILL. you take them.
+
+> use key on door
+
+hmm
+
+> look door
+
+it has all the features of a norm'l DOOR.
+
+> use key on lock
+
+the key doesn't fit the LOCK.
+
+the PILL takes effect.
+  +1 HIGH [95%]
+  +1 HAIR [31%].
+
+>
+
+**take grass**
+
+> go right
+
+the ROCK is in the way.
+
+> take rock
+
+it is too heavy.
+
+> take grass
+
+you take the GRASS. the ROCK falls through the HOLE.
+
+> look hole
+
+you'd better not.
+
+> go right
+
+you go RIGHT.
+
+**scaffold lvl 1**
+**scaffold lvl 2**
+**scaffold lvl 3**
+**sky cave**
+**syk temple / blessing**
+**get rope**
+
+> take rope
+
+**descend**
+**enter cave**
+**cave bypass / ladder drop**
+**green master**
+
+22 beats
+19 notes
+
+45 measures main
+4 measures ending
+18 scenes = 2.5 measures / scene
+or 13 scenes 3/4/4/3 3/4/4/3 3/4/4/3 3/end
+6x 4, 7x 3
+
+14 letters/measure and/or 7 linefeeds
+duration	tone		task
+4 	intro/active		wake up
+3	questionable	take grass
+4	loud		sky temple
+3.5	revision		sky temple
+3.5	hammer/relax	slay the foul beast
+3	relaxing		leave cabin
+3	descending	scaffold
+4	ping/climbing	sky cave
+2	stationary		scaffold
+2	stationary		scaffold
+3	descend/build	cave bypass
+4	all over, loud	cave / bypass
+2	transition/bounce	scaffold
+2	transition/bounce	scaffold
+2	transition		inside cabin?
+conclusion, reverse cronological + green master ending
+
+conclusion: forward conological:
+* wake up
+* slay the foul beast
+x
+* leave cabid
+* take grass
+x
+* scaffold base
+
+* lvl 1
+* lvl 2
+* lvl 3
+* cave
+* temple
+* rope
+* lvl3
+
+* lvl 2
+* lvl 1
+x
+* cave outside
+* cave inside
+* cave bypass
+* bypass / ladder drop
+
+* green master
