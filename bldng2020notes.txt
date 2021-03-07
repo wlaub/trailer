@@ -156,42 +156,42 @@ or 13 scenes 3/4/4/3 3/4/4/3 3/4/4/3 3/end
 0	4 	intro/active		wake up
 1	3	questionable	take grass
 2	4	loud		sky temple
-3	3.5	revision		sky temple
-4	3.5	hammer/relax	slay the foul beast
+3	3	revision		sky temple (other world)
+4	4	hammer/relax	slay the foul beast
 5	3	relaxing		leave cabin
 6	3	descending	scaffold
 7	4	ping/climbing	sky cave
 8	2	stationary		scaffold
 9	2	stationary		scaffold
 a	3	descend/build	cave bypass
-b	4	all over, loud	cave / bypass
-c	2	transition/bounce	scaffold
-d	2	transition/bounce	scaffold
-e	2	transition		inside cabin?/leave cabin (section 5)
+b	4	all over, loud	cave / bypass (other world)
+c	2	transition/bounce	scaffold (other world)
+d	2	transition/bounce	scaffold (other world)
+e	2	transition		inside cabin?/leave cabin (section 5) (other world)
 f	conclusion, reverse cronological + green master ending
 
 conclusion: forward conological:
 * wake up
 * slay the foul beast
-x
 * leave cabin
 * take grass
 x
 * scaffold base
-
 * lvl 1
+
 * lvl 2
 * lvl 3
 * cave
 * temple
 * rope
 * lvl3
-
 * lvl 2
+
 * lvl 1
 x
 * cave outside
 * cave inside
+X
 * cave bypass
 * bypass / ladder drop
 

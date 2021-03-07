@@ -92,6 +92,9 @@ producing no sensation.
 
 2f>
 
+** (other world) **
+
+
 but you're still hungry...
 
 30> use knife on self
@@ -256,21 +259,21 @@ the GNOME just giggles.
 
 **scaffold 2, 1** 2/2
 
-**cave bypass** 3/4
+**cave bypass** 3/4 (other world)
 
-** scaffold1, 2** 2/2
+** scaffold1, 2** 2/2 (other world)
 
 fc> go left
 you GO RIGHT, crossing the NATR'L BRDGE. your FRND FLLWS.
 
 you drop a ROCKS on the way.
 
-you are in a CAVE with your FRND. you hear dripping. you 
+you are in a CAVE, alone. you hear dripping. you 
 feel a BLACK WIND blowing through you from deeper in the 
-CAVE. EXITS are RIGHT, deeper into the CAVE.
+CAVE. exits are RIGHT, deeper into the CAVE.
 
-fd> talk frnd
-you GO RIGHT, deeper into the CAVE. your FRND FLLWS.
+fd> go left
+you GO RIGHT, deeper into the CAVE.
 
 the BLACK WIND HOWLS.
 

@@ -141,7 +141,11 @@ def process_line(line):
     result = []
     for part in parts:
         if part.isupper():
-            tpart = colorama.Fore.BLACK+colorama.Back.WHITE
+            tpart = colorama.Fore.BLACK
+            if part.upper() == 'GREEN':
+                tpart +=colorama.Back.GREEN
+            else:
+                tpart +=colorama.Back.WHITE
             tpart += part
             fragment = ''
             if tpart[-1] in ['.',',',';',':']:
@@ -152,7 +156,10 @@ def process_line(line):
             result.append(tpart)
 
         else:
-            result.append(part.upper())
+            tpart = part.upper()
+            if tpart == 'GREEN':
+                tpart = colorama.Fore.GREEN+part.upper()+colorama.Fore.RESET
+            result.append(tpart)
 
     result = ' '.join(result)
 
@@ -177,7 +184,8 @@ def render(command, outbuf, image_lines):
     for idx, line in enumerate(image_lines):
         out_frame[idx+1] = window[idx+1][0] + line + window[idx+1][len(line)+1:]
 
-    out_frame[-1] = '> '+ command.upper()
+    cmdproc = process_line(command)
+    out_frame[-1] = '> '+ cmdproc
     return '\n'.join(out_frame)
 
 infile = sys.argv[1]
@@ -337,73 +345,8 @@ def execute_command(meas_idx, cmd_idx):
         frames.append((next_time, tframe))
         next_time += linerate#*beatrate
 
-script = [
-#0
-['cmd', 1],
-['cmd', 2],
-['cmd', 3],
-['cmd', 4],
-
-#['cmd', 12],
-['cmd', 0x13],
-['cmd', 0x14], #this one is double length
-['blank'],
-#1
-['cmd', 0x2c],
-['cmd', 0x2d],
-['cmd', 0x2e], #double length
-['blank'],
-['cmd', 0x31],
-['cmd', 0x32],
-['cmd', 0x33],
-#2
-['cmd', 0x4a],
-['cmd', 0x4b],
-['cmd', 0x4c],
-['cmd', 0x4d],
-['cmd', 0x53],
-['cmd', 0x54],
-['cmd', 0x55],
-#3
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0x70],
-['cmd', 0x71],#double length
-['blank'],
-['cmd', 0x72],
-#4
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-#5
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-#6
-['cmd', 0xfe],
-['cmd', 0xfe],
-['cmd', 0xfe],
-['flashcmd', 0xfe,0xfe,-1,0xfe,0xfe,-1,0xfe],
-['flashcmd', 0xfe,0xfe,0xfe,0x71,0xfe,0xfe,0xfe],
-['flashcmd', 0xfe,0xfe,-1,0x13,0x5b,0x4f,0x06],
-
-['cmd', 0xfe],
-#
-#end
-#['flashcmd', #,#,-1,#,#,-1,#],
-#['flashcmd', #,#,#,#,#,#,#],
-#['flashcmd', #,#,-1,#,#,#,#],
-#['cmd', 36],
-]
+#change this to change the script
+from script2020 import script
 
 #render frames
 
@@ -442,7 +385,7 @@ for i in range(4):
 #start playback
 
 pygame.mixer.init(frequency=44100)
-music = pygame.mixer.Sound('Title7.ogg')
+music = pygame.mixer.Sound('title7mixed.ogg')
 
 bpms = [240]*8
 beatrate = 60/bpms[0]
@@ -464,7 +407,7 @@ def map_beat(beat):
     return result
 
 start_time = time.time()
-music.set_volume(.1)
+music.set_volume(.3)
 music.play()
 
 
