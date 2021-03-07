@@ -138,7 +138,8 @@ it is too heavy.
 
 4d> take path
 
-this will put the game into an unwinnable state. do you wish to proceed?
+this will put the game into an unwinnable state. do you 
+wish to proceed?
 y/n > n
 
 4e> eat corps
@@ -163,7 +164,8 @@ hmm
 
 53> look
 
-you are in the main room of your CABIN. there is a COUCH, a TABLE, a LAMP. there is a HAMMR next to the DOOR.
+you are in the main room of your CABIN. there is a COUCH,
+a TABLE, a LAMP. there is a HAMMR next to the DOOR.
 
 exits are LEFT and RIGHT.
 
@@ -173,7 +175,8 @@ it is a norm'l HAMMR for climbing just like in real life.
 
 55> take hammr
 
-this will put the game into an unwinnable state. do you wish to proceed?
+this will put the game into an unwinnable state. do you 
+wish to proceed?
 y/n > n
 
 56> look couch
@@ -182,10 +185,12 @@ the COUCH has seen better days.
 
 57> look table
 
-there is a LAMP on the TABLE. would you like to look inside the TABLE?
+there is a LAMP on the TABLE. would you like to look inside
+the TABLE?
 y/n > y
 
-you look inside the TABLE. there is a DRIVR, a KEY, 3 TRASH, and 1 PILL. you take them.
+you look inside the TABLE. there is a DRIVR, a KEY, 3 
+TRASH, and 1 PILL. you take them.
 
 58> use key on door
 
