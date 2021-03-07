@@ -174,7 +174,7 @@ conclusion: forward conological:
 * wake up
 * slay the foul beast
 x
-* leave cabid
+* leave cabin
 * take grass
 x
 * scaffold base
