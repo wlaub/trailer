@@ -97,8 +97,8 @@ but you're still hungry...
 30> use knife on self
 
 you plunge the KNIFE into your CHEST. there is no pain, but
-your blood feels cold as it flows across your skin. you
-begin to feel sick, and your hearing fades.
+your BLOOD feels cold as it flows across your skin. you
+feel sick, and your hearing fades.
 
 31> take knife
 
@@ -114,6 +114,146 @@ you lie down on the ALTAR.
 
 34>
 
+**slay the foul beast**
+
+48> look green mnstr
+
+the FOUL BEAST blocks the exit. it hasnt heard you yet.
+
+49> kill green mnstr
+
+hmm
+
+4a> slay foul beast
+
+you stab the GREEN MNSTR with you SWORD. it dies.
+
+4b> go right
+
+the PATH is blocked by the CORPS.
+
+4c> take corps
+
+it is too heavy.
+
+4d> take path
+
+this will put the game into an unwinnable state. do you wish to proceed?
+y/n > n
+
+4e> eat corps
+
+you eat the CORPS, leaving only a BLOOD
+
+4f>
+
+**leave cabin**
+
+50> go right
+
+the DOOR is in the way.
+
+51> open door
+
+it is locked.
+
+52> take door
+
+hmm
+
+53> look
+
+you are in the main room of your CABIN. there is a COUCH, a TABLE, a LAMP. there is a HAMMR next to the DOOR.
+
+exits are LEFT and RIGHT.
+
+54> look hammr
+
+it is a norm'l HAMMR for climbing just like in real life.
+
+55> take hammr
+
+this will put the game into an unwinnable state. do you wish to proceed?
+y/n > n
+
+56> look couch
+
+the COUCH has seen better days.
+
+57> look table
+
+there is a LAMP on the TABLE. would you like to look inside the TABLE?
+y/n > y
+
+you look inside the TABLE. there is a DRIVR, a KEY, 3 TRASH, and 1 PILL. you take them.
+
+58> use key on door
+
+hmm
+
+59> look door
+
+it has all the features of a norm'l DOOR.
+
+5a> use key on lock
+
+the key doesn't fit the LOCK.
+
+the PILL takes effect.
+  +1 HIGH [95%]
+  +1 HAIR [31%].
+
+5b>
+
+**scaffold 3** 3
+
+
+
+**sky cave** 4
+
+you go RIGHT.
+
+
+
+
+
+
+
+
+
+70> look
+
+you are at the end of the SKY CAVE. it is a dead end. there
+is nothing here.
+
+exits are LEFT.
+
+71> go left
+
+you go LEFT.
+
+
+
+
+
+
+
+
+
+72> talk gnome
+
+the GNOME just giggles.
+
+73> 
+
+
+
+
+**scaffold 2, 1** 2/2
+
+**cave bypass** 3/4
+
+** scaffold1, 2** 2/2
 
 fc> go left
 you GO RIGHT, crossing the NATR'L BRDGE. your FRND FLLWS.

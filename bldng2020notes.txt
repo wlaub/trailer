@@ -167,7 +167,7 @@ a	3	descend/build	cave bypass
 b	4	all over, loud	cave / bypass
 c	2	transition/bounce	scaffold
 d	2	transition/bounce	scaffold
-e	2	transition		inside cabin?
+e	2	transition		inside cabin?/leave cabin (section 5)
 f	conclusion, reverse cronological + green master ending
 
 conclusion: forward conological:
