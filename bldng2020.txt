@@ -1,153 +1,121 @@
-﻿
+﻿**wake up**
+you wake from the nightmare, no longer exhausted enough to
+sleep. it is time to start your day.
 
+what do you do?
 
 00> look
-you are in a CAVE with your FRND. There are 00013 ROCKS on 
-the GRND. your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-01> look frnd
-this is your best frnd:
-  strng 5  int   7
-  hair  6  high  8
+it is too dark. you must turn on the LIGHT first.
 
-02> talk frnd
-  how can we distinguish the original experience from the
-  memory? what if this is the memory?
+01> listn
 
-03> look cave
-it is a NORM'L CAVE.
+you hear something breathing.
 
-04> take rock
-TAKE what?
+02> get up
 
-05> take rocks
-you take a ROCKS. There are 00012 ROCKS on the GRND.
+it is too dark. you must turn on the LIGHT first.
 
-Something settles... FIELD STATE changes to STAB'L.
+03> use light
 
-06> talk frnd
-  if this is memory then we should also be able to remember
-  the future.
+the LIGHT is voice-activated
 
-07> go right
-you GO RIGHT. your FRND FLLWS.
+04> say x9vu21jx
 
-you are in a CAVE with your FRND. There are 00013 ROCKS on 
-the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
+this will put the game into an unwinnable state. do you 
+wish to proceed?
+y/n > n
 
-08> take rocks
-please don't.
+05> whspr x9vu21jx
 
-09> talk frnd
-he has stopped talking. he looks upset.
+you whisper the PASWD. the LIGHT turns on.
 
-10> take rocks
-your FRND blocks your PATH.
+06>
 
-11> go right
-your FRND blocks your PATH.
+**take grass**
 
-12> go left
-you GO LEFT.
+10> go right
 
-you are in a CAVE. There are 00012 ROCKS on the GRND. Your 
-PERSP is SIDE. EXITS are LEFT and RIGHT.
+the ROCK is in the way.
 
-13> take rocks
-you take a ROCKS. There are 00011 ROCKS on the GRND.
+11> take rock
 
-Something tenses... FIELD STATE changes to VOLT'L.
+it is too heavy.
 
-14> take rocks
-you take a ROCKS. There are 00010 ROCKS on the GRND.
+12> take grass
 
-Something churns... FIELD STATE changes to DIRE.
+you take the GRASS. the ROCK falls through the HOLE.
 
-15> take rocks
-you take a ROCKS. There are 00009 ROCKS on the GRND.
+13> look hole
 
-16> take rocks
-you take a ROCKS. There are 00008 ROCKS on the GRND.
+you'd better not.
 
-17> take rocks
-you take a ROCKS. There are 00007 ROCKS on the GRND.
+14> go right
 
-Something clicks... FIELD STATE changes to CANON.
+you go RIGHT.
 
-18> take rocks
-you take a ROCKS. There are 00006 ROCKS on the GRND.
 
-Something exists... FIELD STATE changes to CAUSAL.
 
-19> take rocks
-you take a ROCKS. There are 00005 ROCKS on the GRND.
 
-20> go right
-you GO RIGHT.
 
-you are in a CAVE with your FRND. There are 00013 ROCKS on 
-the GRND. Your PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-21> take rocks
-your FRND blocks your PATH.
 
-22> take path
-your FRND blocks your PATH.
 
-23> talk frnd
-he has stopped talking. he looks upset.
 
-24> take frnd
-you TAKE the FRND.
+15>
 
-you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
-PERSP is SIDE. EXITS are LEFT and RIGHT.
+16>
 
-25> inv
-  00008  ROCKS
-  GRASS  FRND
+**sky temple**
 
-26> go left
-you GO LEFT.
-you are in a CAVE. There are 00005 ROCKS on the GRND. Your 
-PERSP is SIDE. EXITS are LEFT and RIGHT.
 
-27> drop frnd
-you DROP the FRND.
 
-you are in a CAVE. There are 00005 ROCKS on the GRND. There
-is a FRND here. Your PERSP is SIDE. EXITS are LEFT and 
-RIGHT.
 
-28> go right
-you GO RIGHT.
 
-you are in a CAVE. There are 00013 ROCKS on the GRND. Your 
-PERSP is SIDE. EXITS are LEFT and RIGHT.
+2b> take gb'lt
 
-29> take rocks
-you take a ROCKS. There are 00012 ROCKS on the GRND.
+you cannot TAKE that.
 
-30> go right
-you GO RIGHT.
+2c> get gb'lt
 
-you are in a CAVE with your FRND. There is a CHASM here. 
-There is a NATR'L BRDGE over the CHASM. EXITS are RIGHT, 
-across the CHASM.
+you accept the GB'LT.
 
-31> look chasm
-your eyes slide away from it. you can't bear to look into 
-it.
+2d> use gb'lt
 
-32> look frnd
-this is your best frnd:
-  strng 2  int   7
-  hair  6  high  0
+hmm
 
-33> talk frnd
-he stares silently across the CHASM, sweating. he is PALE.
+2e> use gb'lt on self
 
-34> go left
+you bring the GB'LT to your LIPS and tilt it back. the 
+ICHOR slips past your LIPS and through your MOUTH, 
+producing no sensation. 
+
+2f>
+
+but you're still hungry...
+
+30> use knife on self
+
+you plunge the KNIFE into your CHEST. there is no pain, but
+your blood feels cold as it flows across your skin. you
+begin to feel sick, and your hearing fades.
+
+31> take knife
+
+you take the KNIFE.
+
+32> get knife
+
+the KNIFE cannot be given.
+
+33> drop self on altar
+
+you lie down on the ALTAR.
+
+34>
+
+
+fc> go left
 you GO RIGHT, crossing the NATR'L BRDGE. your FRND FLLWS.
 
 you drop a ROCKS on the way.
@@ -156,12 +124,12 @@ you are in a CAVE with your FRND. you hear dripping. you
 feel a BLACK WIND blowing through you from deeper in the 
 CAVE. EXITS are RIGHT, deeper into the CAVE.
 
-35> talk frnd
+fd> talk frnd
 you GO RIGHT, deeper into the CAVE. your FRND FLLWS.
 
 the BLACK WIND HOWLS.
 
-36> 
+fe> 
 
     ████  █     ████  █   █  ███     █   █  ███  █   █
     █   █ █     █   █ ██  █ █        ██ ██ █   █ ██  █
@@ -169,6 +137,6 @@ the BLACK WIND HOWLS.
     █   █ █     █   █ █  ██ █   █    █   █ █   █ █  ██
     ████  █████ ████  █   █  ███     █   █ █   █ █   █
 
-              COMING TO HOME VIDEO AND STEAM              
+              coming to home video and steam              
                          4/20/20                         
-37> 
+ff> 

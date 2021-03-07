@@ -152,23 +152,23 @@ or 13 scenes 3/4/4/3 3/4/4/3 3/4/4/3 3/end
 6x 4, 7x 3
 
 14 letters/measure and/or 7 linefeeds
-duration	tone		task
-4 	intro/active		wake up
-3	questionable	take grass
-4	loud		sky temple
-3.5	revision		sky temple
-3.5	hammer/relax	slay the foul beast
-3	relaxing		leave cabin
-3	descending	scaffold
-4	ping/climbing	sky cave
-2	stationary		scaffold
-2	stationary		scaffold
-3	descend/build	cave bypass
-4	all over, loud	cave / bypass
-2	transition/bounce	scaffold
-2	transition/bounce	scaffold
-2	transition		inside cabin?
-conclusion, reverse cronological + green master ending
+	duration	tone		task
+0	4 	intro/active		wake up
+1	3	questionable	take grass
+2	4	loud		sky temple
+3	3.5	revision		sky temple
+4	3.5	hammer/relax	slay the foul beast
+5	3	relaxing		leave cabin
+6	3	descending	scaffold
+7	4	ping/climbing	sky cave
+8	2	stationary		scaffold
+9	2	stationary		scaffold
+a	3	descend/build	cave bypass
+b	4	all over, loud	cave / bypass
+c	2	transition/bounce	scaffold
+d	2	transition/bounce	scaffold
+e	2	transition		inside cabin?
+f	conclusion, reverse cronological + green master ending
 
 conclusion: forward conological:
 * wake up

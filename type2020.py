@@ -39,7 +39,7 @@ window = """┌─────────────────────�
                                                            ┴
 >""".split('\n')
 
-typerate = 0.5
+typerate = 0.25
 linerate = 1.
 flashrate = 1.
 measrate = 7
@@ -60,43 +60,46 @@ class Cmd():
         pass
 
 commands = {
-1: Cmd(0, []),
-2: Cmd(0, [-1, 2, -1, 3, -1, 4]),
-3: Cmd(0, []),
-4: Cmd(0, []),
-5: Cmd(0, [5]),
-6: Cmd(5, [-1, 7, -1, 8, -1, 9]),
-7: Cmd(5, [-1,-2,-1,10]),
-8: Cmd(10, []),
-9: Cmd(10, []),
-10: Cmd(10, []),
-11: Cmd(10, []),
-12: Cmd(10, [-1,-2,-1,11]),
-13: Cmd(11, [12]),
-14: Cmd(12, [13]),
-15: Cmd(13, [14]), #18, 16, 19,17
-18: Cmd(14, [15]), #drain rocks in correct sequence
-16: Cmd(15, [16]), #scramble this
-19: Cmd(16, [17]),
-17: Cmd(17, [18]), #end on canon
-20: Cmd(18, [-1,-2,-1,10]),
-21: Cmd(10, []),
-22: Cmd(10, []),
-23: Cmd(10, []),
-24: Cmd(10, [19]),
-25: Cmd(19, []),
-26: Cmd(19, [-1,-2,-1,18]),
-27: Cmd(18, [20]),
-28: Cmd(20, [-1,-2,-1,19]),
-29: Cmd(19, [21]),
-30: Cmd(21, [-1,-2,-1,22]),
-31: Cmd(22, []),
-32: Cmd(22, []),
-33: Cmd(22, []),
-34: Cmd(22, [-1,23,-2,-1,24]),
-35: Cmd(24, [-1,-2,-1,25]),
-36: Cmd(25, [-1,-2, -3]),
-37: Cmd(-1, []), #TODO: Change this
+0x1: Cmd(0, []),
+0x2: Cmd(0, [-1, 2, -1, 3, -1, 4]),
+0x3: Cmd(0, []),
+0x4: Cmd(0, []),
+0x5: Cmd(0, [5]),
+0x6: Cmd(5, [-1, 7, -1, 8, -1, 9]),
+0x7: Cmd(5, [-1,-2,-1,10]),
+0x8: Cmd(10, []),
+0x9: Cmd(10, []),
+0x10: Cmd(10, []),
+0x11: Cmd(10, []),
+0x12: Cmd(10, [-1,-2,-1,11]),
+0x13: Cmd(11, [12]),
+0x14: Cmd(12, [13]),
+0x15: Cmd(13, [14]), #18, 16, 19,17
+0x18: Cmd(14, [15]), #drain rocks in correct sequence
+0x16: Cmd(15, [16]), #scramble this
+0x19: Cmd(16, [17]),
+0x17: Cmd(17, [18]), #end on canon
+0x20: Cmd(18, [-1,-2,-1,10]),
+0x21: Cmd(10, []),
+0x22: Cmd(10, []),
+0x23: Cmd(10, []),
+0x24: Cmd(10, [19]),
+0x25: Cmd(19, []),
+0x26: Cmd(19, [-1,-2,-1,18]),
+0x27: Cmd(18, [20]),
+0x28: Cmd(20, [-1,-2,-1,19]),
+0x29: Cmd(19, [21]),
+0x30: Cmd(21, [-1,-2,-1,22]),
+0x31: Cmd(22, []),
+0x32: Cmd(22, []),
+0x33: Cmd(22, []),
+0x34: Cmd(22, [-1,23,-2,-1,24]),
+0x35: Cmd(24, [-1,-2,-1,25]),
+0xfe: Cmd(25, [-1]),
+0xff: Cmd(-1, []), #TODO: Change this
+0x2c: Cmd(0, []),
+0x2d: Cmd(0, []),
+0x2e: Cmd(0, []),
 }
 
 frames = []
@@ -143,7 +146,7 @@ def render(command, outbuf, image_lines):
     for idx, line in enumerate(image_lines):
         out_frame[idx+1] = window[idx+1][0] + line + window[idx+1][len(line)+1:]
 
-    out_frame[-1] = '> '+ command
+    out_frame[-1] = '> '+ command.upper()
     return '\n'.join(out_frame)
 
 infile = sys.argv[1]
@@ -154,10 +157,12 @@ lines = open(infile, 'r', encoding='utf-8').read().split('\n')
 command_index = {}
 for idx, line in enumerate(lines):
     if '>' in line:
-        command_index[int(line[:2])] = idx
+        try:
+            command_index[int(line[:2], 16)] = idx
+        except: pass
 
 #strip command numbers
-lines = list(map(lambda x: x if not '>' in x else x[2:], lines))
+lines = list(map(lambda x: x if not '>' in x or x[2] != '>' in x else x[2:], lines))
 
 lines_base = lines
 
@@ -303,62 +308,64 @@ def execute_command(meas_idx, cmd_idx):
 
 script = [
 #0
-['title', "wrn'ng", ' '], #todo: trailer intro
-['title', 'this', "trl'r"], #this trailer
-['title', 'is', 'not'], #is not
-['title', 'canon', ' ', True], #canon
+['cmd', 1],
+['cmd', 2],
 ['cmd', 3],
 ['cmd', 4],
-['title', 'this', "sum'r"],
+
+#['cmd', 12],
+['cmd', 0x13],
+['cmd', 0x14], #this one is double length
+['blank'],
 #1
-['cmd', 6],
-['cmd', 7],
-['cmd', 9],
-['cmd', 12],
-['cmd', 13],
-['cmd', 14],
-['title', 'defy', "norm'l"],
+['cmd', 0x2c],
+['cmd', 0x2d],
+['cmd', 0x2e], #double length
+['blank'],
+['cmd', 0x31],
+['cmd', 0x32],
+['cmd', 0x33],
 #2
-['cmd', 18],
-['cmd', 16],
-['cmd', 19],
-['cmd', 17],
-['cmd', 20],
-['cmd', 21],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
 ['title', 'b', 'tough'],
 #3
-['cmd', 23],
-['cmd', 24],
-['cmd', 25],
-['cmd', 26],
-['cmd', 27],
-['cmd', 28],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
 ['title', 'b', 'sexy'],
 #4
-['cmd', 30],
-['cmd', 31],
-['cmd', 32],
-['cmd', 33],
-['cmd', 34],
-['cmd', 35],
-['cmd', 35],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
 #5
-['cmd', 30],
-['cmd', 31],
-['cmd', 32],
-['cmd', 33],
-['cmd', 34],
-['cmd', 35],
-['cmd', 35],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
 #6
-['cmd', 30],
-['cmd', 31],
-['cmd', 32],
-['flashcmd', 1,4,-1,6,7,-1,9],
-['flashcmd', 12,14,16,17,21,23,25],
-['flashcmd', 27,28,-1,30,31,33,35],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['cmd', 0xfe],
+['flashcmd', 0x1,0x2,-1,0x3,0x4,-1,0x5],
+['flashcmd', 0x1,0x2,0x3,0x4,0x5,0x1,0x2],
+['flashcmd', 0x1,0x2,-1,0x3,0x4,0x5,0x1],
 
-['cmd', 36],
+['cmd', 0xfe],
 #
 #end
 #['flashcmd', #,#,-1,#,#,-1,#],
